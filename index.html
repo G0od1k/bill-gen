@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bill generator</title>
+
+        <script src="genbill.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div class="step">
+                <h2>Template</h2>
+                <div>
+                    <label>
+                        Fixed point
+                        <input
+                            type="number"
+                            id="fixed-point"
+                            min="0"
+                            value="2"
+                        /> </label
+                    ><br />
+                    <label>
+                        Min width
+                        <input
+                            type="number"
+                            id="min-width"
+                            min="0"
+                            value="24"
+                        /> </label
+                    ><br />
+                    <textarea
+                        id="bill_tem_inp"
+                        cols="30"
+                        rows="10"
+                        placeholder="Header"
+                    >
+Účtenka #0000
+Název s.r.o.
++420 
+{date} {time}
+{bill}
+Sum: {sum}</textarea
+                    >
+                </div>
+            </div>
+            <div class="step">
+                <h2>Positions</h2>
+                <div>
+                    <div id="poss"></div>
+                    <button id="addPos">+</button>
+                </div>
+            </div>
+            <div class="step">
+                <h2 id="render_h">Render</h2>
+                <div>
+                    <textarea id="text-input" rows="4" cols="50"></textarea>
+
+                    <template id="tem-pos">
+                        <div class="pos">
+                            <input
+                                type="text"
+                                class="title"
+                                placeholder="Name"
+                            />:
+                            <input
+                                type="number"
+                                name=""
+                                id=""
+                                class="price"
+                                placeholder="Price"
+                            />×
+                            <input
+                                type="number"
+                                name=""
+                                id=""
+                                class="count"
+                                placeholder="count"
+                                value="1"
+                            />
+                            <button class="del">del</button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
