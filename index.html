@@ -7,6 +7,8 @@
 
         <script src="genbill.js" defer></script>
         <script src="script.js" defer></script>
+
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <main>
@@ -58,33 +60,61 @@ Sum: {sum}</textarea
                 <div>
                     <textarea id="text-input" rows="4" cols="50"></textarea>
 
-                    <template id="tem-pos">
-                        <div class="pos">
-                            <input
-                                type="text"
-                                class="title"
-                                placeholder="Name"
-                            />:
-                            <input
-                                type="number"
-                                name=""
-                                id=""
-                                class="price"
-                                placeholder="Price"
-                            />×
-                            <input
-                                type="number"
-                                name=""
-                                id=""
-                                class="count"
-                                placeholder="count"
-                                value="1"
-                            />
-                            <button class="del">del</button>
-                        </div>
-                    </template>
+                    <label>
+                        Padding
+                        <input
+                            type="number"
+                            id="padding"
+                            min="0"
+                            value="8"
+                        /> </label
+                    ><br />
+                    <label>
+                        Line height
+                        <input
+                            type="number"
+                            id="line-height"
+                            min="0"
+                            value="16"
+                        /> </label
+                    ><br />
+                    <label>
+                        Line spacing
+                        <input
+                            type="number"
+                            id="line-space"
+                            min="0"
+                            value="4"
+                        /> </label
+                    ><br />
+
+                    <canvas hidden></canvas>
+                    <img id="output-image" src="" alt="Output Image" />
+                    <button onclick="generateImage()">Generate Image</button>
+                    <button onclick="downloadImage()">Download Image</button>
                 </div>
             </div>
         </main>
+        <template id="tem-pos">
+            <div class="pos">
+                <input type="text" class="title" placeholder="Name" />:
+                <input
+                    type="number"
+                    name=""
+                    id=""
+                    class="price"
+                    placeholder="Price"
+                />×
+                <input
+                    type="number"
+                    name=""
+                    id=""
+                    class="count"
+                    placeholder="count"
+                    value="1"
+                />
+                <button class="del">del</button>
+            </div>
+        </template>
     </body>
 </html>
