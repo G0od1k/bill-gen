@@ -61,6 +61,19 @@ document.querySelector("#render_h").onclick = () => {
         return number.toFixed(count ? fixInCount : fixInPrice)
     }
 
+    function formatText(text) {
+        return replaceText(text)
+            .replace(/^\{hr\}(.*)$/gm, (substring, mask) =>
+                "".padStart(width, mask || "—")
+            )
+            .replace(/^\{c\}(.*)$/gm, (substring, target) => {
+                return target.padStart(~~((width + target.length) / 2))
+            })
+            .replace(/^(.*)\{t\}(.*)$/gm, (substring, left, right) => {
+                return left + right.padStart(width - left.length)
+            })
+    }
+
     let bill = ""
 
     poss.forEach((pos) => {
@@ -75,16 +88,17 @@ document.querySelector("#render_h").onclick = () => {
             bill +=
                 pos.name +
                 "\n    " +
-                (formatNumber(pos.price) + "×" + pos.count).padEnd(
-                    width - formatNumber(pos.price * pos.count).length - 4
-                ) +
+                formatNumber(pos.price) +
+                "×" +
+                pos.count +
+                "{t}" +
                 formatNumber(pos.price * pos.count) +
                 "\n"
         }
         sum += pos.count * pos.price
     })
 
-    text = replaceText(text.replace(/\{bill\}/g, bill.trim()))
+    text = formatText(text.replace(/\{bill\}/g, bill.trim()))
 
     document.querySelector("#text-input").rows = text.split("\n").length
     document.querySelector("#text-input").cols = width
