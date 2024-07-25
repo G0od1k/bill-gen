@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Bill generator</title>
 
+        <script src="https://cdn.jsdelivr.net/npm/qrious"></script>
         <script src="genbill.js" defer></script>
         <script src="images.js" defer></script>
+        <script src="qrcode.js" defer></script>
         <script src="script.js" defer></script>
         <script src="dropdown.js" defer></script>
 
@@ -92,6 +94,59 @@ Sum:{t}{sum} Kč
                         following formats: 75% – percentage of the bill's width,
                         10ch – width in characters, 100 – width in pixels.
                     </p>
+                    <h3>Add QR code</h3>
+                    <form id="qr-form">
+                        <label>
+                            I-BAN
+                            <input type="text" id="payment-iban" />
+                        </label>
+                        <label>
+                            Amount
+                            <input
+                                type="number"
+                                id="payment-am"
+                                min="0"
+                                step="0.01"
+                            />
+                        </label>
+                        <label>
+                            Currency
+                            <input
+                                type="text"
+                                id="payment-cur"
+                                autocapitalize="characters"
+                                minlength="3"
+                                maxlength="3"
+                            />
+                        </label>
+                        <label>
+                            Message
+                            <input
+                                type="text"
+                                id="payment-msg"
+                                maxlength="140"
+                            />
+                        </label>
+                        <label>
+                            Name
+                            <input
+                                type="text"
+                                id="payment-name"
+                                maxlength="70"
+                            />
+                        </label>
+                        <label>
+                            Variable symbol
+                            <input
+                                type="number"
+                                id="payment-var"
+                                min="0"
+                                max="9999999999"
+                            />
+                        </label>
+                        <input type="submit" />
+                    </form>
+                    <img src="#" id="qr" hidden />
                 </div>
             </div>
             <div class="step">
