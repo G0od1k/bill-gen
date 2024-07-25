@@ -42,7 +42,9 @@ document.querySelector("#render_h").onclick = () => {
 
     const width = Math.max(
         findLongestLine(replaceText(text).split("\n")).length,
-        findLongestLine(poss.map((x) => x.name)).length,
+        findLongestLine(
+            poss.map((x) => x.name + "    " + formatNumber(x.price * x.count))
+        ).length,
         findLongestLine(
             poss.map(
                 (x) =>
