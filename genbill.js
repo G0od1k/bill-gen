@@ -12,7 +12,7 @@ function findLongestLine(array) {
     return longestLine
 }
 
-document.querySelector("#render_h").onclick = () => {
+document.querySelector("#result_h").onclick = () => {
     let text = document.querySelector("#bill_tem_inp").value,
         fixInPrice = document.querySelector("#fixed-point").valueAsNumber
     let poss = []

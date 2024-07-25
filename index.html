@@ -51,6 +51,25 @@ Název s.r.o.
 Sum:{t}{sum} Kč
 {c}Děkujeme za nákup</textarea
                     >
+                    <p class="tip">
+                        List of all short codes:<br />
+
+                        <code>{date}</code> – Current date<br />
+                        <code>{time}</code> – Current time<br />
+                        <code>{hr}</code> – Horizontal rule. You can specify the
+                        symbol(s) used for generating the horizontal rule after
+                        the code. For example, <code>{hr}=</code> will create a
+                        rule with equal signs.<br />
+                        <code>{bill}</code> – Placeholder for all positions in
+                        the bill with their prices<br />
+                        <code>{sum}</code> – Total sum of the bill<br />
+                        <code>{t}text</code> – Aligns the text to the right,
+                        which can be accompanied by text on the left<br />
+                        <code>{c}Text</code> – Centers the text<br />
+                        <code>{img}id:size</code> – Used to insert an image in
+                        image mode. For more details on usage, refer to the
+                        "Images" subpage<br />
+                    </p>
                 </div>
             </div>
             <div class="step">
@@ -65,10 +84,18 @@ Sum:{t}{sum} Kč
                 <div>
                     <div id="imgList"></div>
                     <input type="file" id="imgFileInput" accept="image/*" />
+                    <p class="tip">
+                        To use images in the bill, add a line to the bill in the
+                        format <code>{img}id:size</code>, where you should
+                        replace <code>id</code> with the ID of your image. The
+                        <code>size</code> can be specified in one of the
+                        following formats: 75% – percentage of the bill's width,
+                        10ch – width in characters, 100 – width in pixels.
+                    </p>
                 </div>
             </div>
             <div class="step">
-                <h2 id="render_h">Render</h2>
+                <h2 id="result_h">Result</h2>
                 <div>
                     <textarea id="text-input" rows="4" cols="50"></textarea>
 

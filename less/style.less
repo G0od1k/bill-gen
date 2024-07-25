@@ -44,7 +44,7 @@ main {
 
     > div {
         height: calc(100% - @header-h - 2rem);
-
+        overflow: auto;
         padding: 1rem;
 
         #poss();
@@ -120,6 +120,7 @@ button {
 
 textarea {
     max-width: 100%;
+    flex-shrink: 0;
 }
 
 #imgList {
@@ -156,4 +157,16 @@ textarea {
         bottom: 0;
         right: 0;
     }
+}
+
+.tip {
+    color: gray;
+    width: 80%;
+    line-height: calc(1em + 0.5rem);
+}
+
+code {
+    border: solid 1px #363636;
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
 }
