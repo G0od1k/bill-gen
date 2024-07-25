@@ -3,11 +3,14 @@
 
 body {
     background: linear-gradient(135deg, hotpink, cadetblue) no-repeat;
-    height: 100vh;
+    height: 100%;
     margin: 0;
 
     font-family: Roboto;
     color: white;
+
+    display: flex;
+    justify-content: center;
 }
 
 #output-image {
@@ -21,10 +24,7 @@ main {
     max-width: 56.25rem;
     width: 100%;
 
-    position: absolute;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 100dvh;
 
     background-color: #121212;
 }
@@ -39,13 +39,29 @@ main {
     color: white;
 
     &.a {
-        height: calc(100vh - 2 * @header-h);
+        height: calc(100dvh - 2 * @header-h);
     }
 
     > div {
         height: 100%;
 
         padding: 1rem;
+
+        #poss();
+    }
+}
+
+#poss {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pos {
+    line-height: calc(1em + 0.5rem);
+
+    button {
     }
 }
 
@@ -57,4 +73,37 @@ h2 {
     height: @header-h;
     margin: 0;
     padding: 0 1rem;
+}
+
+label {
+    display: inline-block;
+    width: 18.75rem;
+    line-height: calc(1em + 0.5rem);
+
+    input {
+        float: right;
+    }
+}
+
+input,
+textarea,
+button {
+    border: 0;
+    background-color: #242424;
+
+    padding: 0.25rem;
+    color: white;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+button {
+    padding: 0.5em;
+}
+
+#addPos {
+    aspect-ratio: 1/1;
 }

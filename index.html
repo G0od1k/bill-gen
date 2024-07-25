@@ -23,8 +23,8 @@
                             id="fixed-point"
                             min="0"
                             value="2"
-                        /> </label
-                    ><br />
+                        />
+                    </label>
                     <label>
                         Min width
                         <input
@@ -32,8 +32,8 @@
                             id="min-width"
                             min="0"
                             value="24"
-                        /> </label
-                    ><br />
+                        />
+                    </label>
                     <textarea
                         id="bill_tem_inp"
                         cols="30"
@@ -63,13 +63,8 @@ Sum: {sum}</textarea
 
                     <label>
                         Padding
-                        <input
-                            type="number"
-                            id="padding"
-                            min="0"
-                            value="8"
-                        /> </label
-                    ><br />
+                        <input type="number" id="padding" min="0" value="8" />
+                    </label>
                     <label>
                         Line height
                         <input
@@ -77,8 +72,8 @@ Sum: {sum}</textarea
                             id="line-height"
                             min="0"
                             value="16"
-                        /> </label
-                    ><br />
+                        />
+                    </label>
                     <label>
                         Line spacing
                         <input
@@ -86,26 +81,33 @@ Sum: {sum}</textarea
                             id="line-space"
                             min="0"
                             value="4"
-                        /> </label
-                    ><br />
+                        />
+                    </label>
 
                     <canvas hidden></canvas>
                     <img id="output-image" src="" alt="Output Image" />
-                    <button onclick="generateImage()">Generate Image</button>
-                    <button onclick="downloadImage()">Download Image</button>
+                    <div class="button-group">
+                        <button onclick="generateImage()">
+                            Generate Image
+                        </button>
+                        <button onclick="downloadImage()">
+                            Download Image
+                        </button>
+                    </div>
                 </div>
             </div>
         </main>
         <template id="tem-pos">
             <div class="pos">
-                <input type="text" class="title" placeholder="Name" />:
+                <input type="text" class="title" placeholder="Name" /> :
                 <input
                     type="number"
                     name=""
                     id=""
                     class="price"
                     placeholder="Price"
-                />×
+                />
+                ×
                 <input
                     type="number"
                     name=""
