@@ -39,11 +39,11 @@ main {
     color: white;
 
     &.a {
-        height: calc(100dvh - 2 * @header-h);
+        height: calc(100dvh - 3 * @header-h);
     }
 
     > div {
-        height: 100%;
+        height: calc(100% - @header-h - 2rem);
 
         padding: 1rem;
 
@@ -60,9 +60,12 @@ main {
 
 .pos {
     line-height: calc(1em + 0.5rem);
+}
 
-    button {
-    }
+.del {
+    padding: 0;
+    width: 1.5rem;
+    height: $width;
 }
 
 h2 {
@@ -78,11 +81,18 @@ h2 {
 label {
     display: inline-block;
     width: 18.75rem;
-    line-height: calc(1em + 0.5rem);
+    line-height: 1.5rem;
 
     input {
         float: right;
     }
+}
+
+input,
+button {
+    height: 1rem;
+    line-height: 1rem;
+    box-sizing: content-box;
 }
 
 input,
@@ -101,9 +111,49 @@ button {
 }
 
 button {
-    padding: 0.5em;
+    padding: 0.5rem;
 }
 
 #addPos {
     aspect-ratio: 1/1;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+#imgList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.img {
+    position: relative;
+
+    @w: 10rem;
+
+    width: @w;
+    height: calc(@w + 1.75rem);
+
+    img {
+        width: @w;
+        height: $width;
+        object-fit: cover;
+    }
+
+    input {
+        width: @w - 2.25rem;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .del {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }

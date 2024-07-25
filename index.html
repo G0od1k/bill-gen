@@ -6,6 +6,7 @@
         <title>Bill generator</title>
 
         <script src="genbill.js" defer></script>
+        <script src="images.js" defer></script>
         <script src="script.js" defer></script>
         <script src="dropdown.js" defer></script>
 
@@ -47,7 +48,7 @@ Název s.r.o.
 {hr}
 {bill}
 {hr}
-Sum:{t}{sum}
+Sum:{t}{sum} Kč
 {c}Děkujeme za nákup</textarea
                     >
                 </div>
@@ -57,6 +58,13 @@ Sum:{t}{sum}
                 <div>
                     <div id="poss"></div>
                     <button id="addPos">+</button>
+                </div>
+            </div>
+            <div class="step">
+                <h2>Images</h2>
+                <div>
+                    <div id="imgList"></div>
+                    <input type="file" id="imgFileInput" accept="image/*" />
                 </div>
             </div>
             <div class="step">
@@ -100,6 +108,14 @@ Sum:{t}{sum}
                 </div>
             </div>
         </main>
+
+        <template id="tem-img">
+            <div class="img">
+                <img />
+                <input type="text" class="imgId" placeholder="id" />
+                <button class="del">×</button>
+            </div>
+        </template>
         <template id="tem-pos">
             <div class="pos">
                 <input type="text" class="title" placeholder="Name" /> :
@@ -119,7 +135,7 @@ Sum:{t}{sum}
                     placeholder="count"
                     value="1"
                 />
-                <button class="del">del</button>
+                <button class="del">×</button>
             </div>
         </template>
     </body>
