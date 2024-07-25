@@ -86,5 +86,9 @@ document.querySelector("#render_h").onclick = () => {
 
     text = replaceText(text.replace(/\{bill\}/g, bill.trim()))
 
+    document.querySelector("#text-input").rows = text.split("\n").length
+    document.querySelector("#text-input").cols = width
+    document.querySelector("#text-input").style.width = null
+    document.querySelector("#text-input").style.height = null
     document.querySelector("#text-input").value = text
 }
