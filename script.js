@@ -67,8 +67,6 @@ function generateImage() {
         lineSpace +
         totalImagesHeight
 
-    console.log(images)
-
     ctx.fillStyle = "white"
     ctx.fillRect(0, 0, cnv.width, cnv.height)
 
